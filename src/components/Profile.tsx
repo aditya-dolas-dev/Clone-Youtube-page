@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCamera } from "react-icons/fa";
+import Tabs from "./Tabs";
 
 const Profile = () => {
 
@@ -71,8 +72,10 @@ const Profile = () => {
         <button className="ml-[4rem] mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500">Subscribe</button>
        </div>
       </div>
+
+      <Tabs/>
     </div>
-  )
+  );
 }
 
 export default Profile;
