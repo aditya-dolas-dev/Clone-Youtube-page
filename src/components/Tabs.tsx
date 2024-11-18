@@ -1,6 +1,8 @@
-import { FaHome,FaInfoCircle, FaPhone} from "react-icons/fa"
+import { FaHome,FaInfoCircle} from "react-icons/fa"
+import { FiTv } from "react-icons/fi";
+import { RiContactsLine } from "react-icons/ri";
 import { GoProjectSymlink } from "react-icons/go"
-import { SiCoursera } from "react-icons/si"
+
 import About from "./About"
 import Contact from "./Contact"
 import { useState } from "react"
@@ -19,6 +21,7 @@ import Card from "./Card"
              title="Amazing Card"
              description="This is a cool-looking card componnet using react and tailwind css"
              image="https://via.placeholder.com/400x300"
+             link=""
             />
           ))}
         </div>
@@ -31,9 +34,9 @@ import Card from "./Card"
       content: <About />,
     },
     {
-      id: "projects",
+      id: "content",
       icon: <GoProjectSymlink />,
-      label: "Projects",
+      label: "Content",
       content: (
         <div className="flex flex-wrap">
           {Array.from({ length: 6 }).map((_, index) => (
@@ -42,15 +45,16 @@ import Card from "./Card"
               title="Amazing Card"
               description="This is a cool-looking card component using React and Tailwind CSS."
               image="https://via.placeholder.com/400x300"
+              link=""
             />
           ))}
         </div>
       ),
     },
     {
-      id: "courses",
-      icon: <SiCoursera />,
-      label: "Courses",
+      id: "videos",
+      icon: <FiTv />,
+      label: "Videos",
       content: (
         <div className="flex flex-wrap">
           {Array.from({ length: 6 }).map((_, index) => (
@@ -59,6 +63,7 @@ import Card from "./Card"
               title="Amazing Card"
               description="This is a cool-looking card component using React and Tailwind CSS."
               image="https://via.placeholder.com/400x300"
+              link=""
             />
           ))}
         </div>
@@ -66,14 +71,14 @@ import Card from "./Card"
     },
     {
       id: "contact",
-      icon: <FaPhone />,
+      icon: <RiContactsLine/>,
       label: "Contact",
       content: <Contact/>,
     },
   ]
 
 const Tabs = () => {
-  const [activeTab,setActiveTab] = useState([0].id);
+  const [activeTab,setActiveTab] = useState(tabs[0].id);
   return (
     <div className="p-4 mt-[3rem]">
     <div className=" flex border-b border-gray-200">
@@ -81,7 +86,7 @@ const Tabs = () => {
         <button key={tab.id} className={`flex-1 text-center py-2 px-4 font-medium text-sm ${activeTab===tab.id? 'border-b-2' : 'text-gray-600'}`} onClick={()=>setActiveTab(tab.id)}>
 
           <div className="flex items-center justify-center space-x-2">
-            {tabs.icon  }
+            {tab.icon  }
             <span>{tab.label}</span>
           </div>
 
