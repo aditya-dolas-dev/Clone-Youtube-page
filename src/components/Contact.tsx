@@ -38,6 +38,7 @@ const Contact = () => {
         className="flex items-center space-x-2 text-gray-900 hover:text-gray-600 mr-[2rem]"
         >
         <span className="text-lg">{link.label}</span>
+        <span>{link.icon}</span>
         </a>
        ))}  
        

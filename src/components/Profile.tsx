@@ -58,7 +58,7 @@ const Profile = () => {
           </label>
           
          
-          <input type="file" id="profile-upload" accept="imgae/*" className="hidden" onChange={handleProfileChange} />
+          <input type="file" id="profile-upload" accept="image/*" className="hidden" onChange={handleProfileChange} />
         </button>
 
        {/* channel detail */}
